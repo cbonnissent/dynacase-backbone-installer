@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<module name="dynacase-backbone-installer" version="1.0" release="0" basecomponent="no">
+
+    <description>Backbone is a JS framework to build rich and modern application</description>
+
+    <parameters>
+        <param name="backbone" label="Backbone download URL" type="text"
+               volatile="yes" onupgrade="W"
+               default="ftp://ftp.anakeen.com/third-party/backbone-1.0.0.zip"/>
+    </parameters>
+
+    <post-install>
+        <download href="@backbone" action="programs/backbone_install">
+            <label lang="en">Download and install backbone
+            </label>
+        </download>
+    </post-install>
+
+    <post-upgrade>
+        <download href="@backbone" action="programs/backbone_install">
+            <label lang="en">Download and install backbone
+            </label>
+        </download>
+    </post-upgrade>
+
+</module>
