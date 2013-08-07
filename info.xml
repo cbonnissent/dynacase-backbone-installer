@@ -6,7 +6,7 @@
     <parameters>
         <param name="backbone" label="Backbone download URL" type="text"
                volatile="yes" onupgrade="W"
-               default="ftp://ftp.anakeen.com/third-party/backbone-1.0.0.zip"/>
+               default="http://ftp.dynacase.org/third-party/backbone-1.0.zip"/>
     </parameters>
 
     <post-install>
