@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<module name="dynacase-backbone-installer" version="1.0" release="0" basecomponent="no">
+<module name="dynacase-backbone-installer" version="@VERSION@" release="@RELEASE@" basecomponent="no">
 
     <description>Backbone is a JS framework to build rich and modern application</description>
 
