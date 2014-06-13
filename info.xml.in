@@ -1,26 +1,43 @@
 <?xml version="1.0"?>
-<module name="dynacase-backbone-installer" version="@VERSION@" release="@RELEASE@" basecomponent="no">
+<module name="@PACKAGE@" version="@VERSION@" release="@RELEASE@" basecomponent="no">
 
-    <description>Backbone is a JS framework to build rich and modern application</description>
+<description>
+    Backbone is a JS framework to build rich and modern application
+</description>
 
-    <parameters>
-        <param name="backbone" label="Backbone download URL" type="text"
+<requires>
+    <module comp='ge' version='1.7' name='dynacase-jquery-installer'/>
+    <module comp='ge' version='1.6' name='dynacase-underscore-installer'/>
+</requires>
+
+<parameters>
+    <param name="backbone" label="Backbone download URL" type="text"
                volatile="yes" onupgrade="W"
-               default="http://ftp.dynacase.org/third-party/backbone-1.0.zip"/>
+               default="http://ftp.dynacase.org/third-party/backbone-@VERSION@.zip"/>
     </parameters>
 
-    <post-install>
-        <download href="@backbone" action="programs/backbone_install">
-            <label lang="en">Download and install backbone
-            </label>
-        </download>
-    </post-install>
+<post-install>
+    <download href="@backbone" action="programs/backbone_install">
+        <label lang="en">Download and install backbone @VERSION@</label>
+    </download>
+</post-install>
 
-    <post-upgrade>
-        <download href="@backbone" action="programs/backbone_install">
-            <label lang="en">Download and install backbone
-            </label>
-        </download>
-    </post-upgrade>
+<post-upgrade>
+    <download href="@backbone" action="programs/backbone_install">
+        <label lang="en">Download and install backbone @VERSION@</label>
+    </download>
+</post-upgrade>
+
+<pre-install>
+    <check type="phpclass"  class="ZipArchive">
+        <help>Zip class is not present (including in php 5.2)</help>
+    </check>
+</pre-install>
+
+<pre-upgrade>
+    <check type="phpclass"  class="ZipArchive">
+        <help>Zip class is not present (including in php 5.2)</help>
+    </check>
+</pre-upgrade>
 
 </module>
