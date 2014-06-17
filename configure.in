@@ -1,11 +1,10 @@
-PACKAGE=dynacase-backbone-installer
-
 AC_INIT(./Makefile.in)
+
+AC_SUBST(PACKAGE)
+PACKAGE=dynacase-backbone-installer
 AC_SUBST(VERSION)
 VERSION=`cat VERSION`
 AC_SUBST(RELEASE)
 RELEASE=`cat RELEASE`
-
-
 
 AC_OUTPUT(Makefile info.xml)
